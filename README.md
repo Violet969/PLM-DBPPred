@@ -17,4 +17,11 @@ Install ProteinBERT environment https://github.com/nadavbra/protein_bert.
 
 Using PLM-DBPPred
 =============
+Prediction
+1. Use the data.ipynb to transfer fasta to csv.
+2. Open predict_PLM-DBPPred.ipynb.
+3. Change the test_set file path.
 
+Training
+1. Open train_PLM-DBPPred.ipynb.
+2. Change the train and test sets file path.

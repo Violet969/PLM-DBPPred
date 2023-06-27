@@ -15,6 +15,10 @@ Install ProteinBERT environment https://github.com/nadavbra/protein_bert.
 * lxml (4.3.2)
 * pyfaidx (0.5.8)
 
+Download model Parameters
+=============
+
+
 Using PLM-DBPPred
 =============
 Prediction
@@ -25,3 +29,5 @@ Prediction
 Training
 1. Open train_PLM-DBPPred.ipynb.
 2. Change the train and test sets file path.
+
+   

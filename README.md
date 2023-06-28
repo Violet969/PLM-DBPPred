@@ -17,7 +17,8 @@ Install ProteinBERT environment https://github.com/nadavbra/protein_bert.
 
 Download model Parameters
 =============
-
+Training model paramaters
+https://huggingface.co/Violet969/PLM-DBPPred/tree/main/PLM-DBPPred/DBP_model_param
 
 Using PLM-DBPPred
 =============

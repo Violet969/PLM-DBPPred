@@ -22,13 +22,19 @@ https://huggingface.co/Violet969/PLM-DBPPred/tree/main/PLM-DBPPred/DBP_model_par
 
 Using PLM-DBPPred
 =============
+Training
+1. Open train_PLM-DBPPred.ipynb.
+2. Change the train and test sets file path.
+   
+Test
+1. Open test_PLM-DBPPred.ipynb.
+2. Change the test sets file path.
+
 Prediction
 1. Use the data.ipynb to transfer fasta to csv.
 2. Open predict_PLM-DBPPred.ipynb.
 3. Change the test_set file path.
 
-Training
-1. Open train_PLM-DBPPred.ipynb.
-2. Change the train and test sets file path.
+
 
    

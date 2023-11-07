@@ -7,12 +7,14 @@ A DNA binding protein prediction tool based on proteinBERT, ESM2_30 and protT5.
 Env
 =============
 ProteinBERT environment https://github.com/nadavbra/protein_bert.
-ESM2 environment https://github.com/facebookresearch/esm.
-protT5 environment https://github.com/HannesStark/protein-localization.
 
+ESM2 environment https://github.com/facebookresearch/esm.
+
+protT5 environment https://github.com/HannesStark/protein-localization.
+```
 conda env create -f env.yml
 conda activate PLM_DBPPred
-
+```
 Download model Parameters
 =============
 Training model paramaters

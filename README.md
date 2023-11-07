@@ -14,6 +14,11 @@ Install ProteinBERT environment https://github.com/nadavbra/protein_bert.
 * h5py (3.2.1)
 * lxml (4.3.2)
 * pyfaidx (0.5.8)
+Install ESM2 environment https://github.com/facebookresearch/esm
+pip install fair-esm  # latest release, OR:
+pip install git+https://github.com/facebookresearch/esm.git  # bleeding edge, current repo main branch
+
+Install protT5 environment 
 
 Download model Parameters
 =============

@@ -2,7 +2,7 @@
 
 What is PLM-DBPPred?
 =============
-A DNA binding protein prediction tool based on proteinBERT and attention.
+A DNA binding protein prediction tool based on proteinBERT, ESM2_30 and protT5.
 
 Env
 =============

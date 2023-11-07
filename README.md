@@ -6,19 +6,12 @@ A DNA binding protein prediction tool based on proteinBERT, ESM2_30 and protT5.
 
 Env
 =============
-Install ProteinBERT environment https://github.com/nadavbra/protein_bert.
-* tensorflow (2.4.0)
-* tensorflow_addons (0.12.1)
-* numpy (1.20.1)
-* pandas (1.2.3)
-* h5py (3.2.1)
-* lxml (4.3.2)
-* pyfaidx (0.5.8)
-Install ESM2 environment https://github.com/facebookresearch/esm
-pip install fair-esm  # latest release, OR:
-pip install git+https://github.com/facebookresearch/esm.git  # bleeding edge, current repo main branch
+ProteinBERT environment https://github.com/nadavbra/protein_bert
+ESM2 environment https://github.com/facebookresearch/esm
+protT5 environment https://github.com/HannesStark/protein-localization
 
-Install protT5 environment 
+conda env create -f env.yml
+conda activate PLM_DBPPred
 
 Download model Parameters
 =============

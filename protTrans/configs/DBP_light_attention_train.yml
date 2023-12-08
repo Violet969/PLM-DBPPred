@@ -1,0 +1,27 @@
+experiment_name: 'solubility_prediction_T5_Embedding'
+
+num_epochs: 10
+batch_size: 100
+log_iterations: 100
+patience: 1
+optimizer_parameters:
+  lr: 5.0e-3
+
+target: sol
+unknown_solubility: False
+loss_function: SolCrossEntropy
+
+# Paths to Data
+train_embeddings: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_train/t5_embeddings/embeddings_file.h5'
+val_embeddings: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_val/t5_embeddings/embeddings_file.h5'
+test_embeddings: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_test/t5_embeddings/embeddings_file.h5'
+train_remapping: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_train/remapped_sequences_file.fasta'
+val_remapping: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_val/remapped_sequences_file.fasta'
+test_remapping: '/root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_test/remapped_sequences_file.fasta'
+
+# Model parameters
+model_type: 'Multi_CNN_MLP'
+model_parameters:
+  dropout: 0.25
+  kernel_size: 9
+  output_dim: 1

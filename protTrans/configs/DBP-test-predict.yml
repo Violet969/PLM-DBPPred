@@ -1,0 +1,15 @@
+output_files_name: 'inference_on_DBP'
+
+log_iterations: 100
+n_draws: 1000
+batch_size: 1
+checkpoints_list:
+  - ./outputs/DBP_best_3_true/models/model-0.t7
+
+
+embeddings: '/root/PLM_Sol_ensemble/protTrans/Sol_emb_datasets/need_231010/t5_embeddings/embeddings_file.h5'
+remapping: '/root/PLM_Sol_ensemble/protTrans/Sol_emb_datasets/need_231010/remapped_sequences_file.fasta'
+key_format: fasta_descriptor
+
+
+

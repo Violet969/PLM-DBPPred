@@ -1,0 +1,33 @@
+balanced_loss: no
+batch_size: 64
+checkpoint:
+config: ./configs/DBP_light_attention_prediction.yaml
+embedding_mode: lm
+eval_on_test: yes
+experiment_name: solubility_prediction_T5_Embedding
+key_format: hash
+log_iterations: 100
+loss_function: SolCrossEntropy
+max_length: 6000
+min_train_acc: 0
+model_parameters:
+  dropout: 0.25
+  kernel_size: 9
+  output_dim: 1
+model_type: LightAttention
+n_draws: 200
+num_epochs: 10
+optimizer: Adam
+optimizer_parameters:
+  lr: 5.0e-05
+patience: 8
+seed: 123
+solubility_loss: 0
+target: sol
+test_embeddings: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_test/t5_embeddings/embeddings_file.h5
+test_remapping: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_test/remapped_sequences_file.fasta
+train_embeddings: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_train/t5_embeddings/embeddings_file.h5
+train_remapping: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_train/remapped_sequences_file.fasta
+unknown_solubility: no
+val_embeddings: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_val/t5_embeddings/embeddings_file.h5
+val_remapping: /root/ProtTrans-master/protein-localization-master/embedding_fasta/DBP_data/DBP_val/remapped_sequences_file.fasta

@@ -1,0 +1,15 @@
+setuptools==49.6.0
+biopython==1.78
+click==7.1.2
+numpy==1.20.2
+pyyaml==5.4.1
+torch==1.8.0
+torchvision==0.9.0
+typing-extensions==3.7.4.3
+pandas==1.2.3
+scipy==1.6.2
+matplotlib==3.4.1
+h5py==3.2.1 
+bio-embeddings
+fair-esm 
+git+https://github.com/facebookresearch/esm.git

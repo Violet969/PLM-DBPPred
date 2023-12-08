@@ -13,6 +13,7 @@ ESM2 environment https://github.com/facebookresearch/esm.
 protT5 environment https://github.com/HannesStark/protein-localization.
 ```
 conda env create -f env.yml
+pip install -r requirements.txt
 conda activate PLM_DBPPred
 ```
 Download model Parameters

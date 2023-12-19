@@ -25,6 +25,7 @@ Training model paramaters
 Using PLM-DBPPred
 =============
 ProteinBERT
+
 Training
 ```
 python train.py -train_set ../DBP_dataset/DBP_Predict_refine_13289_230726.train.csv -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv -exp_name test_py
@@ -35,6 +36,7 @@ python predict.py -test_set ./DBP_dataset/DBP_Predict_PDB.test.csv -o ./ -m ./DB
 ```
 
 ProtT5
+
 Used the bio-embedding to generate the .h5 file
 ```
 bio_embeddings light_attention.yaml
@@ -49,6 +51,7 @@ python predict.py --config ./configs/DBP-test-predict.yaml
 ```
 
 ESM
+
 Training
 ```
 python train.py -train_set ../DBP_dataset/DBP_Predict_refine_13289_230726.train.csv -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv -exp_name outputs

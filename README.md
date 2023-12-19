@@ -43,7 +43,7 @@ Training
 ```
 python train.py --config ./configs/DBP_light_attention_train.yaml
 ```
-Test
+Predict
 ```
 python predict.py --config ./configs/DBP-test-predict.yaml  
 ```
@@ -53,7 +53,7 @@ Training
 ```
 python train.py -train_set ../DBP_dataset/DBP_Predict_refine_13289_230726.train.csv -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv -exp_name outputs
 ```
-Test
+Predict
 ```
 python predict.py -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv  -o run_result/ -m ESM2_30_model_param.t7
 ```

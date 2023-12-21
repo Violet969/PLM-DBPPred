@@ -32,11 +32,7 @@ class Solver():
         elif not eval:
             self.start_epoch = 0
             self.max_val_acc = 0  # running accuracy to decide whether or not a new model should be saved
-            self.writer = SummaryWriter(
-                'runs/{}_{}_{}'.format(args.model_type, args.experiment_name,
-                                       datetime.now().strftime('%d-%m_%H-%M-%S')))
-        
-         
+            
 
     def train(self, train_loader: DataLoader, val_loader: DataLoader, eval_data=None):
         """

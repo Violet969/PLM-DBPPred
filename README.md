@@ -1,4 +1,5 @@
 # PLM-DBPPred
+Cite the code:[![DOI](https://zenodo.org/badge/654626858.svg)](https://zenodo.org/doi/10.5281/zenodo.10675351)
 
 What is PLM-DBPPred?
 =============

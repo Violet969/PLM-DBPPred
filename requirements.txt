@@ -13,6 +13,6 @@ matplotlib==3.4.1
 h5py==3.2.1 
 tensorflow==2.5.0
 tensorflow_addons==0.13.0
-lxml==4.3.2
+lxml
 pyfaidx==0.5.8
 bio-embeddings

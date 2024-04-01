@@ -16,5 +16,3 @@ tensorflow_addons==0.13.0
 lxml==4.3.2
 pyfaidx==0.5.8
 bio-embeddings
-fair-esm 
-git+https://github.com/facebookresearch/esm.git

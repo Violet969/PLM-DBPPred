@@ -1,6 +1,7 @@
 setuptools==49.6.0
 biopython==1.78
 click==7.1.2
+cython
 numpy==1.19.2
 pyyaml==5.4.1
 torch==1.8.0

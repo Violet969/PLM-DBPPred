@@ -100,28 +100,3 @@ class Solubility_predict_ToInt():
         
         return embedding
 
-
-class LabelOneHot():
-    """
-    Turn string localization of localization into a one hot np array
-    """
-
-    def __init__(self):
-        pass
-
-    def __call__(self, sample: Tuple[np.ndarray, str, str]) -> Tuple[np.ndarray, np.ndarray, int]:
-        """
-
-        Args:
-            sample: tuple of embedding and localization
-
-        Returns:
-            embedding: the original embedding
-            localization: [10] array with one hot encoding of localization
-        """
-        embedding, localization, solubility = sample
-        localization = LOCALIZATION.index(localization)  # get localization as integer
-        one_hot_localization = np.zeros(len(LOCALIZATION))
-        one_hot_localization[localization] = 1
-        solubility = SOLUBILITY.index(solubility)
-        return embedding, one_hot_localization, solubility

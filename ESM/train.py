@@ -68,7 +68,7 @@ def main(args):
     torch.backends.cudnn.benchmark = True
     ####load model
    
-    model = ESM2_protlocal(**MODEL_CONFIG
+    model = ESM2_protlocal(**MODEL_CONFIG)
     print(model)
     print('model_parameter_number',get_parameter_number(model))
     

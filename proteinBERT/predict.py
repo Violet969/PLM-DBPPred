@@ -48,7 +48,7 @@ def main(args):
 
     dataframe = pd.concat([dataframe_512,dataframe_1024,dataframe_2048])
 
-    dataframe.to_csv(args.o+'DBP_proteinBERT.csv')
+    dataframe.to_csv(args.o+'DBP_proteinBERT.csv',index=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

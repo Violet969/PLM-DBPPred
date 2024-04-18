@@ -121,7 +121,10 @@ def main(args):
     prediction_result['protein_ID'] = np.array(identifiers).squeeze(1).tolist()
     model_output = np.array(test_pred_score).squeeze(1).tolist()
     prediction_result['predict_result'] = [a for a in model_output]
-    prediction_result.to_csv(args.o+'prediction_result.csv')
+    prediction_result['predict_result'] = prediction_result['predict_result'].astype("string")
+    prediction_result['predict_result'] = prediction_result['predict_result'].str.replace('[', '')
+    prediction_result['predict_result'] = prediction_result['predict_result'].str.replace(']', '')
+    prediction_result.to_csv(args.o+'prediction_result.csv',index=False)
 
 
     

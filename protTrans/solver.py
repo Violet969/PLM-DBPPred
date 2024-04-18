@@ -255,13 +255,13 @@ class Solver():
                 
                 test_pred = np.concatenate(test_pred)
         
-        prediction_result = pd.DataFrame(columns=['protein_ID','sequence','predict_result'])
+        prediction_result = pd.DataFrame(columns=['protein_ID','Sequence','predict_result'])
         # print('identifiers',identifiers)
         prediction_result['protein_ID'] = [s for i in identifiers for s in i]
         prediction_result['sequence'] = [s for i in sequences for s in i]
         prediction_result['predict_result'] = [a for i in predictions for s in i for a in s]
         
-        prediction_result.to_csv('protTrans_prediction_result.csv')
+        prediction_result.to_csv('protTrans_prediction_result.csv',index=False)
        
     def save_checkpoint(self, epoch: int):
         """

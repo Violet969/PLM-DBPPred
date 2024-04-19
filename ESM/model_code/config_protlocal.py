@@ -20,7 +20,6 @@ MODEL_CONFIG = {
       "layers": 30,
       "attention_heads": 20,
       "embed_dim": 640,
-      "max_positions": 1024,
       "learned_pos": True,
       "activation_fn": "gelu",
       "use_bert_init": True,

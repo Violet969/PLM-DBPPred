@@ -235,8 +235,8 @@ class Solver():
                     # print(batch)
                     
                     embedding, metadata = batch  # print('sol',sol)
-                
-                    embedding = embedding.to(self.device)
+                    embedding, sol_known = embedding.to(self.device), metadata['solubility_known'].to(self.device)
+            
                     sequence_lengths = metadata['length'][:, None].to(self.device) 
                     frequencies = metadata['frequencies'].to(self.device)  
                     

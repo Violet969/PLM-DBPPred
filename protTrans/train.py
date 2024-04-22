@@ -1,7 +1,7 @@
 import argparse
 import yaml
-from models import *  
-from torch.optim import *  
+from models import *  # For loading classes specified in config
+from torch.optim import *  # For loading optimizer specified in config
 from torch.utils.data import DataLoader
 from torchvision.transforms import transforms
 from datasets.embeddings_dataset import EmbeddingsDataset
@@ -54,8 +54,7 @@ def train(args):
 
 def parse_arguments():
     p = argparse.ArgumentParser()
-    p.add_argument('--config', type=argparse.FileType(mode='r'), default='configs/inference2.yaml')
-    p.add_argument('--experiment_name', type=str, help='name that will be added to the runs folder output')
+    p.add_argument('--config', type=argparse.FileType(mode='r'), default='configs/inference.yaml')
     p.add_argument('--num_epochs', type=int, default=2500, help='number of times to iterate through all samples')
     p.add_argument('--batch_size', type=int, default=1024, help='samples that will be processed in parallel')
     p.add_argument('--patience', type=int, default=50, help='stop training after no improvement in this many epochs')

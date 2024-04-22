@@ -1,6 +1,7 @@
 import copy
 
 from models import *  # For loading classes specified in config
+from models.legacy import *  # For loading classes specified in config
 from torch.optim import *  # For loading optimizer class that was used in the checkpoint
 import os
 import argparse
@@ -19,13 +20,19 @@ def inference(args):
                                              key_format=args.key_format,
                                              embedding_mode=args.embedding_mode,
                                              transform=transform)
-    
+    lookup_set = None
+    if args.distance_threshold >= 0:  # use lookup set for embedding space similarity annotation transfer
+        lookup_set = EEmbeddings_predict_Dataset(args.lookup_embeddings, args.lookup_remapping,
+                                                   key_format=args.key_format,
+                                                   embedding_mode=args.embedding_mode,
+                                                   transform=transform)
+
     # Needs "from models import *" to work
     model: nn.Module = globals()[args.model_type](embeddings_dim=data_set[0][0].shape[-1], **args.model_parameters)
 
     # Needs "from torch.optim import *" and "from models import *" to work
     solver = Solver(model, args, globals()[args.optimizer])
-    return solver.predict_evaluation(data_set, args.output_files_name)
+    return solver.predict_evaluation(data_set, args.output_files_name, lookup_set, args.distance_threshold)
 
 
 def parse_arguments():
@@ -41,6 +48,12 @@ def parse_arguments():
                    help='.h5 or .h5py file with keys fitting the ids in the corresponding fasta remapping file')
     p.add_argument('--remapping', type=str, default='data/embeddings/val_remapped.fasta',
                    help='fasta file with remappings by bio_embeddings for the keys in the corresponding .h5 file')
+    p.add_argument('--distance_threshold', type=float, default=-1.0,
+                   help='cutoff similarity for when to do lookup and when to use denovo predictions. If negative, denovo predictions will always be used.')
+    p.add_argument('--lookup_embeddings', type=str, default='data/embeddings/val_reduced.h5',
+                   help='.h5 or .h5py file with keys fitting the ids in the corresponding fasta remapping file for embedding based similarity annotation transfer')
+    p.add_argument('--lookup_remapping', type=str, default='data/embeddings/val_remapped.fasta',
+                   help='fasta file with remappings by bio_embeddings for the keys in the corresponding .h5 file for embedding based similarity annotation transfer')
     p.add_argument('--key_format', type=str, default='hash',
                    help='the formatting of the keys in the h5 file [fasta_descriptor_old, fasta_descriptor, hash]')
 

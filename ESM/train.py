@@ -19,7 +19,7 @@ import esm
 from esm import Alphabet
 from sklearn.model_selection import train_test_split 
 import sklearn.metrics as metrics
-
+import shutil
 from io import StringIO
 
 torch.cuda.set_device(2)
@@ -35,7 +35,8 @@ def _init_():
         os.makedirs('outputs/'+args.exp_name)
     if not os.path.exists('outputs/'+args.exp_name+'/'+'models'):
         os.makedirs('outputs/'+args.exp_name+'/'+'models')
-
+    run_dir= 'outputs/'+args.exp_name
+    shutil.copyfile('train.py', os.path.join(run_dir,'train.py'))
 def data_loader(csv_data,batch_size):
     data = []
     for idx, row in csv_data.iterrows():

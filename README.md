@@ -13,7 +13,7 @@ ESM2 environment https://github.com/facebookresearch/esm.
 
 protT5 environment https://github.com/HannesStark/protein-localization.
 ```
-# Pytorch==2.0.1 CUDA Version: 11.4 
+# python==3.8.0 Pytorch==2.0.1 CUDA Version: 11.4 
 conda env create -f env.yml
 conda activate PLM_DBPPred
 pip install -r requirements.txt

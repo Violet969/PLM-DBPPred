@@ -17,7 +17,7 @@ protT5 environment https://github.com/HannesStark/protein-localization.
 conda env create -f env.yml
 conda activate PLM_DBPPred
 pip install -r requirements.txt
-pip install bio-embeddings
+pip install bio-embeddings[all]
 pip install fair-esm  # latest release, OR:
 pip install git+https://github.com/facebookresearch/esm.git
 ```

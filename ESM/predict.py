@@ -124,7 +124,7 @@ def main(args):
     prediction_result['predict_result'] = prediction_result['predict_result'].astype("string")
     prediction_result['predict_result'] = prediction_result['predict_result'].str.replace('[', '')
     prediction_result['predict_result'] = prediction_result['predict_result'].str.replace(']', '')
-    prediction_result.to_csv(args.o+'prediction_result.csv',index=False)
+    prediction_result.to_csv(args.o+'ESM_prediction_result.csv',index=False)
 
 
     

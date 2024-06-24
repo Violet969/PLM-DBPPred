@@ -47,11 +47,11 @@ bio_embeddings light_attention.yml
 ```
 Training
 ```
-python train.py --config ./configs/DBP_light_attention_train.yaml
+python train.py --config ./configs/DBP_light_attention_train.yml
 ```
 Predict
 ```
-python predict.py --config ./configs/DBP-test-predict.yaml  
+python predict.py --config ./configs/DBP-test-predict.yml  
 ```
 
 ESM

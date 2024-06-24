@@ -43,7 +43,7 @@ ProtT5
 
 Used the bio-embedding to generate the .h5 file
 ```
-bio_embeddings light_attention.yaml
+bio_embeddings light_attention.yml
 ```
 Training
 ```

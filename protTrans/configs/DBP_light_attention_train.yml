@@ -5,7 +5,7 @@ batch_size: 100
 log_iterations: 100
 patience: 1
 optimizer_parameters:
-  lr: 5.0e-3
+  lr: 5.0e-5
 
 target: sol
 unknown_solubility: False

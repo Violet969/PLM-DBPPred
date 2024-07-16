@@ -4,7 +4,7 @@ Cite the code:[![DOI](https://zenodo.org/badge/654626858.svg)](https://zenodo.or
 What is PLM-DBPPred?
 =============
 A DNA binding protein prediction tool based on proteinBERT, ESM2_30 and protT5.
-![image](https://github.com/Violet969/PLM-DBPPred/blob/main/PLM-DBPPred.png)
+![image](https://github.com/Violet969/PLM-DBPPred/blob/main/PLM-DBPPred.tiff)
 
 ProteinBERT Env
 =============

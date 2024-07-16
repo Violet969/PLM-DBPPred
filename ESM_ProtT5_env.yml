@@ -3,5 +3,5 @@ channels:
   - pytorch
   - defaults
 dependencies:
-  - hdf5
   - python==3.8.0
+  - pip==23.0.1

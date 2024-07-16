@@ -10,8 +10,9 @@ ProteinBERT Env
 =============
 ProteinBERT environment https://github.com/nadavbra/protein_bert.
 ```
-
-
+# python==3.8.0 Tensorflow==2.5.0 CUDA Version: 11.4 
+conda env create -f ProteinBERT_env.yml
+conda activate PLM-DBPPred_ProteinBERT
 ```
 
 Using ProteinBERT
@@ -33,9 +34,9 @@ ESM2 environment https://github.com/facebookresearch/esm.
 protT5 environment https://github.com/HannesStark/protein-localization.
 ```
 # python==3.8.0 Pytorch==2.0.1 CUDA Version: 11.4 
-conda env create -f env.yml
-conda activate PLM_DBPPred
-pip install -r requirements.txt
+conda env create -f ESM_ProtT5_env.yml
+conda activate PLM_DBPPred_ESM_ProtT5
+pip install -r ESM_ProtT5_requirements.txt
 pip install bio-embeddings
 pip install fair-esm  # latest release, OR:
 pip install git+https://github.com/facebookresearch/esm.git
@@ -47,15 +48,18 @@ ProtT5
 
 Used the bio-embedding to generate the .h5 file
 ```
+#Change the file path (sequences_file: ./Train_dataset.fasta prefix: ./Train_dataset_emb)
 bio_embeddings light_attention.yml
 ```
 Training
 ```
+#Change the file path of .h5 and .fasta
 python train.py --config ./configs/DBP_light_attention_train.yml
 ```
 Predict
 ```
-python predict.py --config ./configs/DBP-test-predict.yml  
+#Change the file path of .h5 and .fasta
+python predict.py --config ./configs/DBP_test_predict.yml
 ```
 Using ESM
 =============

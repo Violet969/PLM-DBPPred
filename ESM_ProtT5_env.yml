@@ -5,8 +5,3 @@ channels:
 dependencies:
   - hdf5
   - python==3.8.0
-  - pytorch
-  - seaborn
-  - torchaudio
-  - tqdm
-  

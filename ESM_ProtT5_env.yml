@@ -1,4 +1,4 @@
-name: PLM_DBPPred
+name: PLM_DBPPred_ESM_ProtT5
 channels:
   - pytorch
   - defaults

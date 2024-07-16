@@ -4,29 +4,16 @@ Cite the code:[![DOI](https://zenodo.org/badge/654626858.svg)](https://zenodo.or
 What is PLM-DBPPred?
 =============
 A DNA binding protein prediction tool based on proteinBERT, ESM2_30 and protT5.
+![image](https://github.com/Violet969/PLM-DBPPred/blob/main/PLM-DBPPred.png)
 
-Env
+ProteinBERT Env
 =============
 ProteinBERT environment https://github.com/nadavbra/protein_bert.
-
-ESM2 environment https://github.com/facebookresearch/esm.
-
-protT5 environment https://github.com/HannesStark/protein-localization.
 ```
-# python==3.8.0 Pytorch==2.0.1 CUDA Version: 11.4 
-conda env create -f env.yml
-conda activate PLM_DBPPred
-pip install -r requirements.txt
-pip install bio-embeddings
-pip install fair-esm  # latest release, OR:
-pip install git+https://github.com/facebookresearch/esm.git
+
 ```
-Download model Parameters
-=============
-Training model paramaters
 
-
-Using PLM-DBPPred
+Using ProteinBERT
 =============
 ProteinBERT
 
@@ -39,6 +26,22 @@ Predict
 python predict.py -test_set ./DBP_dataset/DBP_Predict_PDB.test.csv -o ./ -m ./DBP_model_param/
 ```
 
+ESM and ProtT5 Env
+=============
+ESM2 environment https://github.com/facebookresearch/esm.
+protT5 environment https://github.com/HannesStark/protein-localization.
+```
+# python==3.8.0 Pytorch==2.0.1 CUDA Version: 11.4 
+conda env create -f env.yml
+conda activate PLM_DBPPred
+pip install -r requirements.txt
+pip install bio-embeddings
+pip install fair-esm  # latest release, OR:
+pip install git+https://github.com/facebookresearch/esm.git
+```
+
+Using ProtT5
+=============
 ProtT5
 
 Used the bio-embedding to generate the .h5 file
@@ -53,7 +56,8 @@ Predict
 ```
 python predict.py --config ./configs/DBP-test-predict.yml  
 ```
-
+Using ESM
+=============
 ESM
 
 Training

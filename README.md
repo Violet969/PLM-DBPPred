@@ -73,3 +73,16 @@ Predict
 ```
 python predict.py -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv  -o run_result/ -m ESM2_30_model_param.t7
 ```
+
+## Citing PLM-DBPPred
+```
+@article{hu2024systematic,
+  title={Systematic discovery of DNA-binding tandem repeat proteins<? mode longmeta?>},
+  author={Hu, Xiaoxuan and Zhang, Xuechun and Sun, Wen and Liu, Chunhong and Deng, Pujuan and Cao, Yuanwei and Zhang, Chenze and Xu, Ning and Zhang, Tongtong and Zhang, Yong E and others},
+  journal={Nucleic Acids Research},
+  pages={gkae710},
+  year={2024},
+  publisher={Oxford University Press}
+}
+```
+

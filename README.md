@@ -25,7 +25,8 @@ python train.py -train_set ../DBP_dataset/DBP_Predict_refine_13289_230726.train.
 ```
 Predict
 ```
-python predict.py -test_set ./DBP_dataset/DBP_Predict_PDB.test.csv -o ./ -m ./DBP_model_param/
+cd proteinBERT
+python predict.py -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv -o ./ -m ./DBP_model_param/
 ```
 
 ESM and ProtT5 Env

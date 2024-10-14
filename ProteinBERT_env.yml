@@ -17,3 +17,4 @@ dependencies:
     - scipy==1.7.0
     - tensorflow==2.5.0
     - tensorflow-cpu==2.5.0
+    - IPython

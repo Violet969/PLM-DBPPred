@@ -6,8 +6,8 @@ batch_size: 1
 checkpoints_list:
   - /root/PLM-DBPPred-main/protTrans/model_param/model-0.t7
 
-embeddings: '/root/protTrans/need_231010/t5_embeddings/embeddings_file.h5'
-remapping: '/root/protTrans/remapped_sequences_file.fasta'
+embeddings: '/root/protTrans/t5_embeddings/embeddings_file.h5'
+remapping: '/root/protTrans/t5_embeddings/remapped_sequences_file.fasta'
 key_format: fasta_descriptor
 
 

@@ -74,7 +74,7 @@ Predict
 ```
 python predict.py -test_set ../DBP_dataset/DBP_Predict_PDB.test.csv  -o run_result/ -m ESM2_30_model_param.t7
 ```
-
+You can then use the Data_merge.ipynb notebook to compute the average probability across the three models.
 ## Citing PLM-DBPPred
 ```
 @article{hu2024systematic,

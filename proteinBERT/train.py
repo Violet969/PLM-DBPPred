@@ -92,13 +92,13 @@ def main(args):
 
     dataframe.to_csv(args.exp_name+'PLM-DBPPred_predict_result.csv')
     
-    with open(args.exp_name+'/models/model.pt', 'wb') as f:
+    with open('outputs/'+args.exp_name+'/models/model.pt', 'wb') as f:
         pickle.dump(model_generator, f)
 
-    with open(args.exp_name+'/models/model_OUTPUT_SPEC.pt', 'wb') as f:
+    with open('outputs/'+args.exp_name+'/models/model_OUTPUT_SPEC.pt', 'wb') as f:
         pickle.dump(OUTPUT_SPEC, f)
 
-    with open(args.exp_name+'/models/model_input_encoder.pt', 'wb') as f:
+    with open('outputs/'+args.exp_name+'/models/model_input_encoder.pt', 'wb') as f:
         pickle.dump(input_encoder, f)
     # Evaluating the performance on the test-set
 

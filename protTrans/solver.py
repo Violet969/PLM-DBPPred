@@ -2,21 +2,15 @@ import copy
 import inspect
 import os
 import shutil
-from typing import Tuple
 import pandas as pd
 import pyaml
 import torch
 import numpy as np
 from models import *
-import warnings
 import sklearn.metrics as metrics
-from sklearn.metrics import matthews_corrcoef, confusion_matrix, f1_score,roc_auc_score,precision_score
-from torch.utils.data import DataLoader, RandomSampler, Dataset, Subset
-from torch.utils.tensorboard import SummaryWriter
+from torch.utils.data import DataLoader, Dataset
 import torch.nn.functional as F
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-from datetime import datetime
-from tqdm import tqdm
 from utils.general import padded_permuted_collate,predict_padded_permuted_collate
 
 class Solver():
@@ -48,9 +42,8 @@ class Solver():
         """
         args = self.args
         io = IOStream('outputs/' + self.args.exp_name + '/run.log')
-        epochs_no_improve = 0  # counts every epoch that the validation accuracy did not improve for early stopping
-        max_train_acc = 0
-        lr_scheduler = ReduceLROnPlateau(self.optim, mode='min', factor=0.1, patience=100, verbose=True)
+        
+        lr_scheduler = ReduceLROnPlateau(self.optim, mode='min', factor=0.1, patience=1, verbose=True)
         best_test_acc = 0
         for epoch in range(self.start_epoch, args.num_epochs):  # loop over the dataset multiple times
             self.model.train()
@@ -151,8 +144,7 @@ class Solver():
             self.evaluation(eval_data, filename='val_data_after_training')
 
             
-    def evaluation(self, eval_dataset: Dataset, filename: str = '', lookup_dataset: Dataset = None,
-                   distance_threshold=0.81):
+    def evaluation(self, eval_dataset: Dataset):
         """
         Estimate the standard error on the provided dataset and write it to evaluation_val.txt in the run directory
         Args:
@@ -172,11 +164,7 @@ class Solver():
             collate_function = None
         io = IOStream('outputs/' + self.args.exp_name + '/run.log')
         data_loader = DataLoader(eval_dataset, batch_size=self.args.batch_size, collate_fn=collate_function)
-        identifiers =[]
-        sequences = []
-        predictions = []
-        label= []
-    
+        
         with torch.no_grad():  
             
             count = 0.0
@@ -190,7 +178,8 @@ class Solver():
                 frequencies = metadata['frequencies'].to(self.device)  
 
                 mask = torch.arange(metadata['length'].max())[None, :] < metadata['length'][:,None]  
-                outputs = self.model(embedding, mask=mask.to(self.device), sequence_lengths=sequence_lengths,frequencies=frequencies)
+                outputs = self.model(embedding, mask=mask.to(self.device), sequence_lengths=sequence_lengths,
+                                        frequencies=frequencies)
 
                 
                 
@@ -206,8 +195,7 @@ class Solver():
             io.cprint(outstr)
                 
 
-    def predict_evaluation(self, eval_dataset: Dataset, filename: str = '', lookup_dataset: Dataset = None,
-                   distance_threshold=0.81):
+    def predict_evaluation(self, eval_dataset: Dataset):
         """
         Estimate the standard error on the provided dataset and write it to evaluation_val.txt in the run directory
         Args:
@@ -219,10 +207,7 @@ class Solver():
         Returns:
 
         """
-        if lookup_dataset != None and not self.args.target == 'sol':
-            # arraay with len eval_dataset and columns: predictions, labels, distance to nearest neighbors
-            knn_predictions = annotation_transfer(eval_dataset, lookup_dataset)
-
+        
         self.model.eval()
         if len(eval_dataset[0][0].shape) == 2:  # if we have per residue embeddings they have an additional length dim
             collate_function = predict_padded_permuted_collate
@@ -235,10 +220,10 @@ class Solver():
         predictions = []
         
         with torch.no_grad():  
-                test_loss = 0.0
+                
                 count = 0.0
                 test_pred = []
-                test_true = []
+                
                 for batch in data_loader:
                     # print(batch)
                     

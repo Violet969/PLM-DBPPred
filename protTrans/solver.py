@@ -17,10 +17,7 @@ import torch.nn.functional as F
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from datetime import datetime
 from tqdm import tqdm
-
-
-from utils.general import tensorboard_confusion_matrix, padded_permuted_collate,predict_padded_permuted_collate, plot_class_accuracies, \
-    tensorboard_class_accuracies, annotation_transfer, plot_confusion_matrix
+from utils.general import padded_permuted_collate,predict_padded_permuted_collate
 
 class Solver():
     def __init__(self, model, args, optim=torch.optim.Adam, eval=False):

@@ -9,6 +9,7 @@ from datasets.transforms import *
 import os
 from solver import Solver
 from utils.general import padded_permuted_collate, seed_all
+from models.light_attention import LightAttention
 
 
 def train(args):
